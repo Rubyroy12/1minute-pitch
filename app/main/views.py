@@ -6,7 +6,8 @@ from flask_login import login_required
 def index():
     return render_template('index.html')
 
-@main.route('/')
+@main.route('/newpitch')
 @login_required
 def new_pitch():
     """create a new pitch"""
+    
