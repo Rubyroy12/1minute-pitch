@@ -1,6 +1,25 @@
 {%extends 'base.html'%}
+
+
 {%block content%}
-<div class="container">
-    <h2>A minute can change or break you</h2>
+<div class="container text-white">
+    {%block styles %}
+    {{super()}}
+    <link rel="stylesheet" href="{{url_for('static', filename= 'css/styles.css')}}">
+    {%endblock %}
+
+
+    <h2></h2>
+
+
+
+    <div class="container-fluid">
+        <h2>A minute can change or break you.</h2>
+        <p>make your pitch in a minute!!</p>
+        <a class="btn btn-primary" href="/newpitch">New Pitch</a>
+        <a class="btn btn-primary" href="/pitches">New Pitch</a>
+
+
+    </div>
 </div>
 {%endblock%}

@@ -1,7 +1,8 @@
 import os
 
 class Config():
-    pass
+       SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Royal12@localhost/pitch'
+    
 
 
 class prodConfig(Config):
