@@ -24,7 +24,7 @@ def newpitch():
         new_pitch.save_pitches()
         db.session.add(new_pitch)
         db.session.commit()
-        return redirect(url_for('main.newpitch'))
+        return redirect(url_for('main.single_pitch'))
     else: 
         all_pitches= Pitches.query.order_by(Pitches.posted).all()
        
