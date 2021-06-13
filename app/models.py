@@ -2,6 +2,7 @@ from app import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from . import login_manager
+from datetime import datetime
 
 
 @login_manager.user_loader
@@ -19,6 +20,7 @@ class User(UserMixin,db.Model):
     username= db.Column(db.String(255))
     email = db.Column(db.String(255),unique=True)
     role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
+    pitches = db.relationship('Pitches',backref = 'user',lazy = "dynamic")
     password_hash = db.Column(db.String(255))
     pass_secure= db.Column(db.String(255))
 
@@ -44,5 +46,49 @@ class Role(db.Model):
 
     def __repr__(self):
         return f'User {self.name}'
+
+
+class Pitches:
+    """
+    Class that defines class objects
+    """
+    all_pitches=[]
+    
+    def __init__(self,title,category,description):
+        self.title = title
+        self.category = category
+        self.description = description
+
+    def save_pitches(self):
+        """save pitches"""
+        Pitches.all_pitches.append(self)
+    @classmethod
+    def get_pitches(cls,id):
+        response=[]
+        for pitch in cls.all_pitches:
+            response.append(pitch)
+
+
+        return response
+
+
+class Pitches(db.Model):
+
+    __tablename__= 'pitches'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(255))
+    category =db.Column(db.String(255))
+    description = db.Column(db.String(255))
+    posted = db.Column(db.DateTime,default=datetime.utcnow)
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+
+
+    def save_pitches(self):
+        db.session.add(self)
+        db.session.commit()
+    @classmethod
+    def get_pitches(cls,id):
+        pitches =Pitches.query.filter_by(id=id).all()
+        return pitches
 
 

@@ -12,12 +12,18 @@
     <h2></h2>
 
 
-
     <div class="container-fluid">
         <h2>A minute can change or break you.</h2>
         <p>make your pitch in a minute!!</p>
+        {% if current_user.is_authenticated %}
         <a class="btn btn-primary" href="/newpitch">New Pitch</a>
-        <a class="btn btn-primary" href="/pitches">New Pitch</a>
+        {%else %}
+        <a class="btn btn-primary" href="/login">new pitch</a>
+        {% endif %}
+
+        <a href="/pitch">View Pitch</a>
+
+
 
 
     </div>
