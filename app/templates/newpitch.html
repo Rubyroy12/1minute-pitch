@@ -13,6 +13,13 @@
             <div>
                 {{wtf.quick_form(pitch_form)}}
             </div>
+            <div class="card">
+              {% for pitch in pitches%}
+              {{pitch.title}}
+              {{pitch.category}}
+              {{pitch.description}}
+              {% endfor %}
+            </div>
     
         </div>
       </div>

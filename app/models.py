@@ -54,7 +54,8 @@ class Pitches:
     """
     all_pitches=[]
     
-    def __init__(self,title,category,description):
+    def __init__(self,id,title,category,description):
+        self.id = id
         self.title = title
         self.category = category
         self.description = description
@@ -76,6 +77,7 @@ class Pitches(db.Model):
 
     __tablename__= 'pitches'
     id = db.Column(db.Integer, primary_key=True)
+    pitch_id = db.Column(db.Integer)
     title = db.Column(db.String(255))
     category =db.Column(db.String(255))
     description = db.Column(db.String(255))
@@ -88,7 +90,7 @@ class Pitches(db.Model):
         db.session.commit()
     @classmethod
     def get_pitches(cls,id):
-        pitches =Pitches.query.filter_by(id=id).all()
+        pitches =Pitches.query.filter_by(pitch_id=id).all()
         return pitches
 
 
