@@ -21,6 +21,7 @@ class User(UserMixin,db.Model):
     email = db.Column(db.String(255),unique=True)
     role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
     pitches = db.relationship('Pitches',backref = 'user',lazy = "dynamic")
+    comments = db.relationship('Comments',backref='user',lazy = "dynamic")
     password_hash = db.Column(db.String(255))
     pass_secure= db.Column(db.String(255))
 
@@ -83,6 +84,8 @@ class Pitches(db.Model):
     description = db.Column(db.String(255))
     posted = db.Column(db.DateTime,default=datetime.utcnow)
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+    comment = db.relationship('Comments', backref='picth', lazy='dynamic')
+
 
 
     def save_pitches(self):
@@ -92,5 +95,25 @@ class Pitches(db.Model):
     def get_pitches(cls,id):
         pitches =Pitches.query.filter_by(pitch_id=id).all()
         return pitches
+
+class Comments(db.Model):
+    __tablename__ = 'comments'
+    id= db.Column(db.Integer, primary_key=True)
+    comment= db.Column(db.Text())
+    user_id= db.Column(db.Integer,db.ForeignKey('users.id'),nullable=False)
+    pitch_id= db.Column(db.Integer,db.ForeignKey('pitches.id'), nullable=False)
+
+    def save_comment(self):
+        db.session.add(self)
+        db.session.commit()
+    
+    @classmethod
+    def get_comment(cls,pitch_id):
+        comment = Comment.query.filter_by(pitch_id=pitch_id).all()
+        return comment
+
+    def __repr__(self):
+        return f'Comments: {self.comment}'
+
 
 
