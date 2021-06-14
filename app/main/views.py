@@ -53,3 +53,6 @@ def single_pitch():
     
     return render_template('pitch.html', pitches=all_pitches,commentform=commentform)
 
+@main.route('/profile',methods=['POST','GET'])
+def profile():
+    

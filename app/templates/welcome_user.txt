@@ -1,0 +1,5 @@
+Hello {{user.username}}
+Welcome to Minute Pitch
+We have just seen you have signed up for our application and want to welcome you to the family. Please enjoy our services by using one minute to create a meaningful message to someone.
+
+One minute can make you or break you!! lets see what you got!!
