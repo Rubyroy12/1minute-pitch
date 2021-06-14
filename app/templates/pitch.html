@@ -27,6 +27,14 @@
                     <p>{{pitch.description}}</p>
                     <p>posted at: <em>{{pitch.posted}}</em></p>
                     <button class="btn btn-success">Like</button><button class="btn btn-danger">Dislike</button>
+                 <ul>
+                    {%for comment in comments %}
+                    <li>>>
+                        {{comment.comment}}
+                    </li>
+                    {%endfor %}
+                 </ul>
+
                     {{wtf.quick_form(commentform)}}
                     <hr>
 

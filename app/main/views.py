@@ -50,9 +50,11 @@ def single_pitch():
     else:
 
         all_pitches= Pitches.query.order_by(Pitches.posted).all()
+        comments=Comments.query.order_by(Comments.comment).all()
+        
     
-    return render_template('pitch.html', pitches=all_pitches,commentform=commentform)
+    return render_template('pitch.html', pitches=all_pitches,commentform=commentform,comments=comments)
 
-@main.route('/profile',methods=['POST','GET'])
-def profile():
+# @main.route('/profile',methods=['POST','GET'])
+# def profile():
     
