@@ -1,12 +1,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montaga&display=swap');
 *{
-    background-image: url(https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: rgb(77, 79, 80);
+ 
 }
 .container{
     color:  white;
     font-family: 'Montaga';
       
+}
+.impress{
+    font-size: 25px;
+    font-weight:bold;
+    font-family: monospace;
 }
