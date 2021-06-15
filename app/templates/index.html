@@ -20,11 +20,18 @@
         {%else %}
         <a class="btn btn-primary" href="/login">new pitch</a>
         {% endif %}
+        {%if current_user.is_authenticated%}
         <a class="btn btn-primary" href="/pitch">View pitch</a>
+        {% else %}
+        <a class="btn btn-primary" href="/login">View pitch</a>
+        {% endif %}
+
+
 
 
 
     </div>
+    <br>
     <div class="row">
         <div class="col-md-12 text-center">
             <img src="https://miro.medium.com/max/1200/1*eaZKaMVU_ySKAkfmAI79aw.jpeg" alt="">
@@ -39,7 +46,7 @@
 
     </div>
     <div class="card-footer text-center">
-        <p>copyright &copy; 2021 </p>
+        <p>copyright &copy; 2021 Ibrahim</p>
     </div>
 
 
