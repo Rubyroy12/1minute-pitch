@@ -27,6 +27,6 @@ class DevConfig(Config):
 
 config_options ={
     'development':DevConfig,
-    'production': prodConfig,
+    'production': ProdConfig,
     'test':TestConfig
 }
