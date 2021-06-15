@@ -1,2 +1,1 @@
-web: gunicorn manage:app
-    
+web: gunicorn manage:app --preload -b 0.0.0.0:5000 
