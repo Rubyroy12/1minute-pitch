@@ -1,7 +1,7 @@
 Award
 #### Author: [Rubyroy12](https://github.com/Rubyroy12)
 ## Description
-This is an application that will allow users to read news basically from bitcoin, apple and tesla news. 
+This is an application that allows user to use one minute to make a pitch and allow other users to vote ad give feedback on the pitch created.
 As a user of the web application you will be able to:
 1. user authentication user registration and login.
 2. User creating a pitch
