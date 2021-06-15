@@ -48,8 +48,8 @@ Install dependancies that will create an environment for the app to run
 #### Make and run migrations
 bash
 python3.8 manage.py check
-python manage.py makemigrations news
-python3.8 manage.py sqlmigrate news 0001
+python manage.py makemigrations 
+python3.8 manage.py sqlmigrate 
 python3.8 manage.py migrate
 
 #### Run the app
@@ -67,4 +67,4 @@ Open [localhost:5000](http://127.0.0.1:5000)
 * CSS
 
 ### Licence
-This project is under the  [MIT](LICENSE) licence
+This project is under the  [MIT](LICENSE.md) licence
