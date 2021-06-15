@@ -4,7 +4,7 @@ from app.models import User,Role,Pitches
 from flask_migrate import MigrateCommand, Migrate
 
 
-app= create_app('test')
+app= create_app('production')
 
 
 manager = Manager(app)
