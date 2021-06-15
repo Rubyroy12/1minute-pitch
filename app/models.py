@@ -99,7 +99,7 @@ class Pitches(db.Model):
 class Comments(db.Model):
     __tablename__ = 'comments'
     id= db.Column(db.Integer, primary_key=True)
-    comment= db.Column(db.Text())
+    comment = db.Column(db.Text())
     user_id= db.Column(db.Integer,db.ForeignKey('users.id'),nullable=False)
     pitch_id= db.Column(db.Integer,db.ForeignKey('pitches.id'), nullable=False)
 

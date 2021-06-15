@@ -1,5 +1,5 @@
 Award
-#### Author: [Kelvinrono](https://github.com/kelvinrono)
+#### Author: [Rubyroy12](https://github.com/Rubyroy12)
 ## Description
 This is an application that will allow users to read news basically from bitcoin, apple and tesla news. 
 As a user of the web application you will be able to:
@@ -7,15 +7,12 @@ As a user of the web application you will be able to:
 2. User can click on read more to get more news on the source website
 3. See the image of the article he/she wants to read
 
-## Endpoints
-You can access data from the application through the following endpoints:
-1. https://newsapi.org/v2/everything?q=tesla&apiKey=b738bd4e5c9745729671e424d00eaaf1
 
 ## Setup and installations
 * Clone Project to your machine
-* Activate a virtual environment on terminal: `source virtual/bin/activate`
+* Activate a virtual environment on terminal: `source venv/bin/activate`
 * Install all the requirements found in requirements file.
-* On your terminal run `python3.8 manage.py runserver`
+* On your terminal run `python3.8 manage.py server`
 * Access the live site using the local host provided
 ## Getting started
 ### Prerequisites
@@ -24,41 +21,41 @@ You can access data from the application through the following endpoints:
 * pip
 #### Clone the Repo and rename it to suit your needs.
 bash
-git clone https://github.com/kelvinrono/News_Api
+git clone https://github.com/Rubyroy12/1minute-pitch.git
 
 #### Initialize git and add the remote repository
 bash
 git init
 
 bash
-git remote add origin <your-repository-url>
+git remote add origin https://github.com/Rubyroy12/1minute-pitch.git
 
 #### Create and activate the virtual environment
 bash
-python3.8-venv virtual
+python3.8-venv venv
 
 bash
-source virtual/bin/activate
+source venv/bin/activate
 
 #### Install dependancies
 Install dependancies that will create an environment for the app to run
 `pip install -r requirements.txt`
 #### Make and run migrations
 bash
-python3.6 manage.py check
+python3.8 manage.py check
 python manage.py makemigrations news
-python3.6 manage.py sqlmigrate news 0001
-python3.6 manage.py migrate
+python3.8 manage.py sqlmigrate news 0001
+python3.8 manage.py migrate
 
 #### Run the app
 bash
-python3.6 manage.py runserver
+python3.8 manage.py runserver
 
 Open [localhost:5000](http://127.0.0.1:5000)
 ## Testing the Application
-`python3.8 manager.py tests`
+`python3.8 manager.py test`
 ## Built With
-* [Python3.6](https://docs.python.org/3/)
+* [Python3.8](https://docs.python.org/3/)
 * Flask
 * Boostrap
 * HTML
