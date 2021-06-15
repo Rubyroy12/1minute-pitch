@@ -3,9 +3,9 @@ Award
 ## Description
 This is an application that will allow users to read news basically from bitcoin, apple and tesla news. 
 As a user of the web application you will be able to:
-1. See the available news on the homepage
-2. User can click on read more to get more news on the source website
-3. See the image of the article he/she wants to read
+1. user authentication user registration and login.
+2. User creating a pitch
+3. Ability to comment to the created pitch
 
 
 ## Setup and installations
@@ -14,7 +14,12 @@ As a user of the web application you will be able to:
 * Install all the requirements found in requirements file.
 * On your terminal run `python3.8 manage.py server`
 * Access the live site using the local host provided
-## Getting started
+  
+## Specifications
+* user Authentication
+* crating a pitch
+* 
+*  
 ### Prerequisites
 * python3.8
 * virtual environment
